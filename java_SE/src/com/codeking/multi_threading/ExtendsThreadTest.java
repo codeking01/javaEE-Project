@@ -10,11 +10,11 @@ import java.net.URL;
  * @author : codeking
  * @date : 2022/9/8 20:43
  */
-public class ThreadTest extends Thread {
+public class ExtendsThreadTest extends Thread {
     private String url; //图片地址
     private String name; //保存图片的名字
 
-    public ThreadTest(String url, String name) {
+    public ExtendsThreadTest(String url, String name) {
         this.url = url;
         this.name = name;
     }
@@ -29,9 +29,9 @@ public class ThreadTest extends Thread {
     }
 
     public static void main(String[] args) {
-        ThreadTest thread1 = new ThreadTest("https://profile.csdnimg.cn/7/6/9/3_qyj19920704","图片1.jpg");
-        ThreadTest thread2 = new ThreadTest("https://csdnimg.cn/release/blogv2/dist/pc/img/iconSideBeta.png","图片2.jpg");
-        ThreadTest thread3 = new ThreadTest("https://cdn4.buysellads.net/uu/1/3386/1525189943-38523.png","图片3.jpg");
+        ExtendsThreadTest thread1 = new ExtendsThreadTest("https://profile.csdnimg.cn/7/6/9/3_qyj19920704","图片1.jpg");
+        ExtendsThreadTest thread2 = new ExtendsThreadTest("https://csdnimg.cn/release/blogv2/dist/pc/img/iconSideBeta.png","图片2.jpg");
+        ExtendsThreadTest thread3 = new ExtendsThreadTest("https://cdn4.buysellads.net/uu/1/3386/1525189943-38523.png","图片3.jpg");
         thread1.start();
         thread2.start();
         thread3.start();
