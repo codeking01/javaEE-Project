@@ -1,4 +1,4 @@
-package com.codeking.Annotation;
+package com.codeking.annotation;
 
 /**
  * @author : codeking
