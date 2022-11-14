@@ -2,6 +2,7 @@ package com.codeking.assemblages;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 /**
@@ -11,12 +12,13 @@ import java.util.Properties;
 public class PropertiesTest {
     public static void main(String[] args) {
         //Properties:常用来处理配置文件。key和value都是String类型
-        // FileInputStream（需要写较为完整的路径）和 BufferedInputStream(可以读取当前包下的文件内容) 都可以读取文件操作
+        // FileInputStream（需要写  较为完整的路径）和 BufferedInputStream(可以读取当前包下的文件内容) 都可以读取文件操作
         BufferedInputStream fis = null;
         try {
             Properties pros = new Properties();
             //fis = new FileInputStream("java_SE\\src\\com\\codeking\\assemblages\\jdbc.properties");
             fis = (BufferedInputStream) PropertiesTest.class.getResourceAsStream("jdbc.properties");
+            //InputStream is =  PropertiesTest.class.getClassLoader().getResourceAsStream("jdbc.properties");
             //加载流对应文件
             pros.load(fis);
             String name = pros.getProperty("name");
