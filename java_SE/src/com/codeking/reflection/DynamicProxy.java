@@ -25,7 +25,7 @@ import java.lang.reflect.Proxy;
 interface Moon {
     String getBelief();
 
-    void Object(String Moon);
+    void work(String Moon);
 }
 
 // 定义被代理类
@@ -37,7 +37,7 @@ class Venus implements Moon {
     }
 
     @Override
-    public void Object(String MinMoon) {
+    public void work(String MinMoon) {
         System.out.println("通用代码1");
         System.out.println("我的附近有很多的 " + MinMoon);
         System.out.println("通用代码2");
@@ -62,6 +62,11 @@ class InvocationHandlerAdd implements InvocationHandler {
         this.obj = obj;
     }
 
+    /*  为什么需要重写invoke？
+     内存中生成了一个真正的代理对象，会重写当前调用的方法，比如personProxy.eat(),代理对象会重写eat(),
+        然后在重写方法里面会调用这个 super.h.invoke...,所以是需要重写invoke
+    */
+
     //当我们通过代理类的对象，调用方法a时，就会自动的调用如下的方法：invoke()
     //将被代理类要执行的方法a的功能就声明在invoke()中
     @Override
@@ -75,6 +80,16 @@ class InvocationHandlerAdd implements InvocationHandler {
 
 
 public class DynamicProxy {
+    public static void main(String[] args) {
+        Venus sun = new Venus();
+        // 动态的 创建代理对象
+        Moon ProxyVer = (Moon) DynamicProxyImpl.getProxyInstance(sun);
+        //当通过代理类对象调用方法时，会自动调用被代理类中同名的方法
+        String MyBelief = ProxyVer.getBelief();
+        System.out.println("MyBelief" + MyBelief);
+        ProxyVer.work("小行星");
+        System.out.println("+++++++++++++++++++");
+    }
 
     @Test
     public void testDynamicProxy() {
@@ -84,7 +99,7 @@ public class DynamicProxy {
         //当通过代理类对象调用方法时，会自动调用被代理类中同名的方法
         String MyBelief = ProxyVer.getBelief();
         System.out.println("MyBelief" + MyBelief);
-        ProxyVer.Object("小行星");
+        ProxyVer.work("小行星");
         System.out.println("+++++++++++++++++++");
 
     }
