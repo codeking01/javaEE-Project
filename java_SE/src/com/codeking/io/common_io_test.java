@@ -18,7 +18,11 @@ public class common_io_test {
     }
     @Test
     public  void test1() throws IOException {
-        File file2 = new File("C:\\ALL_Softwares\\Develop_Tools\\Java_project\\JavaSE\\hello2.txt");
-        file2.delete();
+        try {
+            File file2 = new File("C:\\ALL_Softwares\\Develop_Tools\\Java_project\\JavaSE\\hello2.txt");
+            file2.delete();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

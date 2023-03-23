@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
  * @date : 2022/9/7 20:46
  */
 public class Demo01Test {
-
     @Test
     public void intChange() {
         //定义基本数据类型
@@ -39,5 +38,6 @@ public class Demo01Test {
         String a9=a7.toString();
         System.out.println(a8);
         System.out.println(a9);
+        System.out.println("中文老夫大多数；康拉丁教父");
     }
 }
