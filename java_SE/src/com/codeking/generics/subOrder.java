@@ -9,7 +9,7 @@ import java.util.List;
  * @author : codeking
  * @date : 2022/11/10 16:45
  */
-public class subOrder<Integer> extends Order<Integer> {
+public class subOrder<Integer> extends com.codeking.generics.Order<Integer> {
 
     public static<E> @NotNull List<E> copyArrayList(E @NotNull [] i){
         ArrayList<E> list = new ArrayList<>();
