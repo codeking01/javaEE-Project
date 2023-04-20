@@ -19,6 +19,8 @@ public class Main {
             // 按 Shift+F9 开始调试代码。我们已为您设置了一个断点，
             // 但您始终可以通过按 Ctrl+F8 添加更多断点。
             System.out.println("i = " + i);
+            int a=5;
+            a--;
         }
     }
 }
